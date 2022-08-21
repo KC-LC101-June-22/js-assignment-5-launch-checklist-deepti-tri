@@ -2,14 +2,14 @@ const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./s
 
 
 window.addEventListener("load", function() {
-    const document = window.document;
+    //const document = window.document;
     const form = document.querySelector("form");
     const list = document.getElementById("faultyItems");
     const button = document.getElementById("formSubmit");
-    let pilotname = document.querySelector("input[name=pilotName]");
-    let copilotname = document.querySelector("input[name=copilotName]");
-    let fuelLevel = document.querySelector("input[name=fuelLevel]");
-    let cargoLevel = document.querySelector("input[name=cargoMass]");
+    const pilotname = document.querySelector("input[name=pilotName]");
+    const copilotname = document.querySelector("input[name=copilotName]");
+    const fuelLevel = document.querySelector("input[name=fuelLevel]");
+    const cargoLevel = document.querySelector("input[name=cargoMass]");
     
     list.style.visibility = "hidden";
     // document.getElementById("pilotStatus").innerHTML = "Pilot Ready";
