@@ -2,7 +2,7 @@ const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./s
 
 
 window.addEventListener("load", function() {
-    //let form = document.querySelector("form");
+    let form = document.querySelector("form");
     let document = window.document;
     let list = document.getElementById("faultyItems");
     
@@ -14,15 +14,15 @@ window.addEventListener("load", function() {
     document.getElementById("fuelStatus").innerHTML = "Fuel Level high enough for launch";
     document.getElementById("cargoStatus").innerHTML = "Cargo Mass low enough for launch";
     
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
+    form.addEventListener("submit", function(event) {
+        
         let pilotname = document.querySelector("input[name=pilotName]");
         let copilotname = document.querySelector("input[name=copilotName]");
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
         let cargoLevel = document.querySelector("input[name=cargoMass]");
 
         formSubmission(window.document, list, pilotname.value, copilotname.value, fuelLevel.value, cargoLevel.value);
-            //event.preventDefault();
+        event.preventDefault();
 
         });
         
