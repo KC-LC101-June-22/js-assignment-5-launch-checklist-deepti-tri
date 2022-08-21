@@ -2,7 +2,7 @@
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-    const destination = document.getElementByID("missionTarget");
+    const destination = document.getElementById("missionTarget");
     destination.innerHTML = `
    
    
@@ -29,12 +29,12 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     list.style.visibility = "hidden";
-    const pilotStatus = document.getElementByID("pilotStatus");
-    const copilotStatus = document.getElementByID("copilotStatus");
-    const fuelStatus = document.getElementByID("fuelStatus");
-    const cargoStatus = document.getElementByID("cargoStatus");
-    const launchStatus = document.getElementByID("launchStatus");
-    const faultyItems = document.getElementByID("faultyItems");
+    const pilotStatus = document.getElementById("pilotStatus");
+    const copilotStatus = document.getElementById("copilotStatus");
+    const fuelStatus = document.getElementById("fuelStatus");
+    const cargoStatus = document.getElementById("cargoStatus");
+    const launchStatus = document.getElementById("launchStatus");
+    const faultyItems = document.getElementById("faultyItems");
 
     // if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
     //     alert("All fields are required!");
