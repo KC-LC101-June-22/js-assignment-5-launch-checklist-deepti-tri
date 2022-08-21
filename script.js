@@ -1,4 +1,3 @@
-const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./scriptHelper");
 
 
 window.addEventListener("load", function() {
@@ -11,6 +10,7 @@ window.addEventListener("load", function() {
     const fuelLevel = document.querySelector("input[name=fuelLevel]");
     const cargoLevel = document.querySelector("input[name=cargoMass]");
     
+    let x = {};
     list.style.visibility = "hidden";
     // document.getElementById("pilotStatus").innerHTML = "Pilot Ready";
     // document.getElementById("copilotStatus").innerHTML = "Co-pilot Ready";    
@@ -18,13 +18,20 @@ window.addEventListener("load", function() {
     // document.getElementById("cargoStatus").innerHTML = "Cargo Mass low enough for launch";
     
     form.addEventListener("submit", function(event) {
-        
-        
-
-        formSubmission(window.document, list, pilotname.value, copilotname.value, fuelLevel.value, cargoLevel.value);
+        if (pilotname.value === "" || copilotname.value === "" || fuelLevel.value === "" || cargoLevel.value === "") {
+            alert("All fields are required!");
+        }
+        else {
+            x = {
+                pilot: pilotname.value,
+                copilot: copilotname.value,
+                fuelLevel: fuelLevel.value,
+                cargoLevel: cargoLevel.value
+            };
+            formSubmission(window.document, list, x.pilot, x.copilot, x.fuelLevel, x.cargoLevel);
+        }
         event.preventDefault();
-
-        });
+    });
         
    
 
