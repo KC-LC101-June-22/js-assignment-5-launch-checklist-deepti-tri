@@ -28,7 +28,7 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    //list.style.visibility = "hidden";
+    list.style.visibility = "hidden";
     const pilotStatus = document.getElementByID("pilotStatus");
     const copilotStatus = document.getElementByID("copilotStatus");
     const fuelStatus = document.getElementByID("fuelStatus");
@@ -43,7 +43,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     
 
     if (validateInput(pilot) === "Not a Number" && validateInput(copilot) === "Not a Number" && validateInput(fuelLevel) === "Is a Number" && validateInput(cargoLevel) === "Is a Number") {
-        list.style.visibility = "visible";
+        faultyItems.style.visibility = "visible";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
@@ -68,10 +68,25 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         }
 
     }
-    return;
-    // else {
-    //     window.alert("All fields are required!");
-    // }
+    
+    else {
+        launchStatus.innerHTML = "Shuttle not ready for launch";
+        launchStatus.style.color = "red";
+        faultyItems.style.visibility = "visible";
+
+        if (validateInput(pilot) !== "Not a Number") {
+            pilotStatus.innerHTML = "Pilot name is invalid!"
+        }
+        if (validateInput(copilot) !== "Not a Number") {
+            copilotStatus.innerHTML = "Co-pilot name is invalid!"
+        }
+        if (validateInput(fuelLevel) !== "Is a Number") {
+            fuelStatus.innerHTML = "Fuel level is invalid!"
+        }
+        if (validateInput(cargoLevel) !== "Is a Number") {
+            cargoStatus.innerHTML = "Cargo Mass is invalid!"
+        }
+    }
 
    
 }
