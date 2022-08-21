@@ -3,6 +3,7 @@ const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./s
 
 window.addEventListener("load", function() {
     //let form = document.querySelector("form");
+    let document = window.document;
     let list = document.getElementById("faultyItems");
     
     let button = document.getElementById("formSubmit");
