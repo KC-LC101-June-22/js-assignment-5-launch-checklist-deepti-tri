@@ -1,7 +1,7 @@
 
 
 window.addEventListener("load", function() {
-    //const document = window.document;
+    let document = window.document;
     const form = document.querySelector("form");
     const list = document.getElementById("faultyItems");
     const button = document.getElementById("formSubmit");
