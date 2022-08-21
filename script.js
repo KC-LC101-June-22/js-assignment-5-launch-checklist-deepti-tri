@@ -2,24 +2,24 @@ const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./s
 
 
 window.addEventListener("load", function() {
-    let form = document.querySelector("form");
-    let document = window.document;
-    let list = document.getElementById("faultyItems");
-    
-    let button = document.getElementById("formSubmit");
+    const document = window.document;
+    const form = document.querySelector("form");
+    const list = document.getElementById("faultyItems");
+    const button = document.getElementById("formSubmit");
+    let pilotname = document.querySelector("input[name=pilotName]");
+    let copilotname = document.querySelector("input[name=copilotName]");
+    let fuelLevel = document.querySelector("input[name=fuelLevel]");
+    let cargoLevel = document.querySelector("input[name=cargoMass]");
     
     list.style.visibility = "hidden";
-    document.getElementById("pilotStatus").innerHTML = "Pilot Ready";
-    document.getElementById("copilotStatus").innerHTML = "Co-pilot Ready";    
-    document.getElementById("fuelStatus").innerHTML = "Fuel Level high enough for launch";
-    document.getElementById("cargoStatus").innerHTML = "Cargo Mass low enough for launch";
+    // document.getElementById("pilotStatus").innerHTML = "Pilot Ready";
+    // document.getElementById("copilotStatus").innerHTML = "Co-pilot Ready";    
+    // document.getElementById("fuelStatus").innerHTML = "Fuel Level high enough for launch";
+    // document.getElementById("cargoStatus").innerHTML = "Cargo Mass low enough for launch";
     
     form.addEventListener("submit", function(event) {
         
-        let pilotname = document.querySelector("input[name=pilotName]");
-        let copilotname = document.querySelector("input[name=copilotName]");
-        let fuelLevel = document.querySelector("input[name=fuelLevel]");
-        let cargoLevel = document.querySelector("input[name=cargoMass]");
+        
 
         formSubmission(window.document, list, pilotname.value, copilotname.value, fuelLevel.value, cargoLevel.value);
         event.preventDefault();
