@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
     const fuelLevel = document.querySelector("input[name=fuelLevel]");
     const cargoLevel = document.querySelector("input[name=cargoMass]");
     
-    //let x = {};
+    
     list.style.visibility = "hidden";
     // document.getElementById("pilotStatus").innerHTML = "Pilot Ready";
     // document.getElementById("copilotStatus").innerHTML = "Co-pilot Ready";    
@@ -21,15 +21,7 @@ window.addEventListener("load", function() {
         if (pilotname.value === "" || copilotname.value === "" || fuelLevel.value === "" || cargoLevel.value === "") {
             alert("All fields are required!");
         }
-        // else {
-        //     // x = {
-        //     //     pilot: pilotname.value,
-        //     //     copilot: copilotname.value,
-        //     //     fuelLevel: fuelLevel.value,
-        //     //     cargoLevel: cargoLevel.value
-        //     // };
-            
-        // }
+        
         formSubmission(window.document, list, pilotname.value, copilotname.value, fuelLevel.value, cargoLevel.value);
         event.preventDefault();
     });
